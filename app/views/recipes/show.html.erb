@@ -1,7 +1,13 @@
 <h1>Recipe Detail</h1>
 
 <ul>
-  <li><%= @recipe.name %> <%= @recipe.instructions %> <%= @recipe.rating %> <%= @recipe.date %><%= @recipe.tags %></li>
+  <li><%= @recipe.name %></li>
+  <li><%= @recipe.instructions %></li>
+  <li><%= @recipe.rating %></li>
+  <li><%= @recipe.date %></li>
+  <%= @recipe.tags.each do |tag| %>
+  <li><% tag.name %></li>
+  <% end %>
 
 </ul>
 
