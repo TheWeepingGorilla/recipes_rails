@@ -1,0 +1,12 @@
+<h1>Tag Detail</h1>
+
+<ul>
+  <li><%= @tag.name %></li>
+</ul>
+
+<a href="/tags/<%= @tag.id %>"
+   data-confirm="You sure?"
+   data-method="delete"
+   rel="nofollow">Delete</a>
+
+ <a href="/tags/<%= @tag.id %>/edit">Edit Tag</a>
