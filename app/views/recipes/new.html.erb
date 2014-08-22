@@ -1,13 +1,8 @@
 <h1>New Recipe</h1>
 
+<%= render('layouts/errors', :object => @recipe) %>
+
 <form action="/recipes" method="post">
-  <label for="recipe_name">Name</label>
-  <input id="recipe_name" name="recipe[name]" type="text" value="<%= @recipe.name %>">
-  <label for="recipe_instructions">Instructions</label>
-  <textarea rows="2" cols="25" id="recipe_instructions" name="recipe[instructions]" type="text"><%= @recipe.instructions %></textarea>
-  <label for="recipe_rating">Rating</label>
-  <input id="recipe_rating" name="recipe[rating]" type="number" value="<%= @recipe.rating %>">
-  <label for="recipe_date">Date</label>
-  <input id="recipe_date" name="recipe[date]" type="date" value="<%= @recipe.date %>">
+  <%= render('form') %>
   <button>Create recipe</button>
 </form>

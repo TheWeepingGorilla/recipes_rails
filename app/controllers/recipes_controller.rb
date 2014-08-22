@@ -31,4 +31,20 @@ class RecipesController < ApplicationController
     flash[:notice] = "The recipe was destroyed.  Completely and utterly."
     redirect_to("/")
   end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
+    render('recipes/edit.html.erb')
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    if @recipe.update(params[:recipe])
+      flash[:notice] = "Recipe updated."
+      redirect_to("/")
+    else
+      flash[:notice] = "You messed up."
+      render('recipes/edit.html.erb')
+    end
+  end
 end
