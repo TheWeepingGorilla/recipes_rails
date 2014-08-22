@@ -1,0 +1,8 @@
+<h1>New Tag</h1>
+
+<%= render('layouts/errors', :object => @tag) %>
+
+<form action="/tags" method="post">
+  <%= render('form') %>
+  <button>Create tag</button>
+</form>
