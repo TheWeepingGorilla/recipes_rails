@@ -18,4 +18,6 @@ Recipes::Application.routes.draw do
 
   match('/recipes/:id/tags', {via: :get, to: 'recipes#add_tag'})
   match('/recipes/:id/tags', {via: :post, to: 'recipes#save_tag'})
+
+  match('/', {via: :post, to: 'searches#index'})
 end
