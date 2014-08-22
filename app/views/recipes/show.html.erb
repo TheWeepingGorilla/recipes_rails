@@ -1,0 +1,11 @@
+<h1>Recipe Detail</h1>
+
+<ul>
+  <li><%= @recipe.name %> <%= @recipe.instructions %> <%= @recipe.rating %> <%= @recipe.date %><%= @recipe.tags %></li>
+
+</ul>
+
+<a href="/recipes/<%= @recipe.id %>"
+   data-confirm="You sure?"
+   data-method="delete"
+   rel="nofollow">Delete</a>

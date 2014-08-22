@@ -19,4 +19,16 @@ class RecipesController < ApplicationController
       render('recipes/new.html.erb')
     end
   end
+
+  def show
+    @recipe = Recipe.find(params[:id])
+    render('recipes/show.html.erb')
+  end
+
+  def destroy
+    @recipe = Recipe.find(params[:id])
+    @recipe.destroy
+    flash[:notice] = "The recipe was destroyed.  Completely and utterly."
+    redirect_to("/")
+  end
 end
