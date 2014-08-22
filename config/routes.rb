@@ -2,6 +2,7 @@ Recipes::Application.routes.draw do
   match('/', {via: :get, to: 'recipes#index'})
   match('/recipes/new', {via: :get, to: 'recipes#new'})
   match('/recipes', {via: :post, to: 'recipes#create'})
+  match('/recipes/fresh', {via: :get, to: 'recipes#fresh'})
   match('/recipes/:id', {via: :get, to: 'recipes#show'})
   match('/recipes/:id', {via: :delete, to: 'recipes#destroy'})
   match('/recipes/:id/edit', {via: :get, to: 'recipes#edit'})

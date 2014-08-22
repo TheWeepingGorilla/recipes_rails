@@ -62,4 +62,9 @@ class RecipesController < ApplicationController
       redirect_to("/recipes/#{@recipe.id}")
     end
   end
+
+  def fresh
+    @recipes = Recipe.sort_by_freshness
+    render('recipes/fresh.html.erb')
+  end
 end
