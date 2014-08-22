@@ -1,14 +1,16 @@
-<h1>Recipe Detail</h1>
+<h1><%= @recipe.name %></h1>
 
 <ul>
-  <li><%= @recipe.name %></li>
-  <li><%= @recipe.instructions %></li>
-  <li><%= @recipe.rating %></li>
-  <li><%= @recipe.date %></li>
-  <%= @recipe.tags.each do |tag| %>
-  <li><% tag.name %></li>
-  <% end %>
-
+  <li>Instructions: <%= @recipe.instructions %></li>
+  <li>Rating: <%= @recipe.rating %></li>
+  <li>Date added: <%= @recipe.date %></li>
+  <li>Tags:
+    <ul>
+      <% @recipe.tags.each do |tag| %>
+        <li><a href="/tags/<%= tag.id %>"><%= tag.name %></a></li>
+      <% end %>
+    </ul>
+  </li>
 </ul>
 
 <a href="/recipes/<%= @recipe.id %>/tags">Add a tag</a>
