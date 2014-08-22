@@ -47,4 +47,19 @@ class RecipesController < ApplicationController
       render('recipes/edit.html.erb')
     end
   end
+
+  def add_tag
+    @tags = Tag.all
+    @recipe = Recipe.find(params[:id])
+    render('recipes/add_tag.html.erb')
+  end
+
+  def save_tag
+    @tag = Tag.find(params[:tag_id])
+    @recipe = Recipe.find(params[:id])
+    if @recipe.tags << @tag
+      flash[:notice] = "Tag added."
+      redirect_to("/recipes/#{@recipe.id}")
+    end
+  end
 end

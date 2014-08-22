@@ -1,0 +1,10 @@
+<h1>Add Tag to <%= @recipe.name %></h1>
+
+<form action="/recipes/<%= @recipe.id %>/tags" method="post">
+  <select name="tag_id">
+    <% @tags.each do |tag| %>
+      <option id="recipe_tags" value="<%= tag.id %>"><%= tag.name %></option>
+    <% end %>
+  </select>
+  <button>Add Tag</button>
+</form>

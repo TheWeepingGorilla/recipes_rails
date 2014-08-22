@@ -14,4 +14,7 @@ Recipes::Application.routes.draw do
   match('/tags/:id', {via: :delete, to: 'tags#destroy'})
   match('/tags/:id/edit', {via: :get, to: 'tags#edit'})
   match('/tags/:id', {via: [:patch, :put], to: 'tags#update'})
+
+  match('/recipes/:id/tags', {via: :get, to: 'recipes#add_tag'})
+  match('/recipes/:id/tags', {via: :post, to: 'recipes#save_tag'})
 end
